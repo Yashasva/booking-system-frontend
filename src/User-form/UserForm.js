@@ -1,14 +1,9 @@
 import React, {useState} from 'react';
-import axios from 'axios';
 
 const UserForm = (props)=>{
 
-    const [userName, setUserName] = useState('');
     const [tickets, setTickets] = useState('');
 
-    const userNameHandler = event=>{
-        setUserName(event.target.value);
-    }
 
     const ticketsHandler = event=>{
         setTickets(event.target.value);
