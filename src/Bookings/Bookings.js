@@ -18,7 +18,7 @@ const Bookings = (props)=>{
                 {props.userBookings.map((booking,key)=>{
                         return <div className="card" key={key}>
                             <div className="card-body">
-                                <h5 className="card-title">{'Booking' + key}</h5>
+                                <h5 className="card-title">{'Booking id: ' + key}</h5>
                                 <div>{booking.seats.map((seat, key)=>{
                                     return <span key={key}>{seat.seatid + ' '}</span>
                                 })}</div>

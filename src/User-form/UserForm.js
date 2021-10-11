@@ -3,9 +3,16 @@ import React, {useState} from 'react';
 const UserForm = (props)=>{
 
     const [tickets, setTickets] = useState('');
+    const [disable, setDisable] = useState(true)
 
 
     const ticketsHandler = event=>{
+        if(event.target.value > 7 || !event.target.value || event.target.value <= 0){
+            setDisable(true);
+        }
+        else{
+            setDisable(false);
+        }
         setTickets(event.target.value);
     }
 
@@ -16,7 +23,7 @@ const UserForm = (props)=>{
             <input type="text" onChange={userNameHandler} value={userName}/> */}
             <label>No. of Tickets</label>
             <input type="number" onChange={ticketsHandler} value={tickets} className="m-2"/>
-            <button type="submit" className="btn btn-primary m-2">Book Tickets</button>
+            <button type="submit" className="btn btn-primary m-2" disabled={disable}>Book Tickets</button>
         </form>
 
     );
