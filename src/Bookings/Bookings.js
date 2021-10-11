@@ -2,6 +2,7 @@ import React from 'react';
 
 import './bookings.css';
 
+//for displaying ticket information
 const Bookings = (props)=>{
 
     
@@ -27,7 +28,7 @@ const Bookings = (props)=>{
                 })}
             </div>
             <div className="container">
-                <div className="row row-cols-6 m-2">
+                <div className="row row-cols-6 m-2 flex-direction-col">
                     {
                     props.seatStatus.map((seat,key)=>{
                         return <div key={key} className="col m-3 btn-primary">{(seat.status)?seat.seatid+': booked': seat.seatid+': available'}</div>

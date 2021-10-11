@@ -3,11 +3,14 @@ import React, {useState, useEffect} from "react";
 import Bookings from "../Bookings/Bookings";
 import axios from "axios";
 
+
+//parent component
 const Home = ()=>{
 
     const [seatStatus, setSeatStatus] = useState([]);
     const [userBookings, setUserBookings] = useState([]);
 
+    //button handler for book tickets
     const submitHandler = event=>{
 
         event.preventDefault();
@@ -29,6 +32,7 @@ const Home = ()=>{
     },[])
 
 
+    //for getting the status of all available seats
     const totalSeats =  ()=>{
         axios.get('https://nameless-falls-39888.herokuapp.com/getCoach/1').then((res)=>{
             setSeatStatus(res.data.coach[0].seats);
