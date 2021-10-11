@@ -15,8 +15,8 @@ const UserForm = (props)=>{
             {/* <label>User Name: </label>
             <input type="text" onChange={userNameHandler} value={userName}/> */}
             <label>No. of Tickets</label>
-            <input type="number" onChange={ticketsHandler} value={tickets}/>
-            <button type="submit" >Book Tickets</button>
+            <input type="number" onChange={ticketsHandler} value={tickets} className="m-2"/>
+            <button type="submit" className="btn btn-primary m-2">Book Tickets</button>
         </form>
 
     );

@@ -1,4 +1,12 @@
-.container{
+.home{
     display: flex;
     justify-content: space-between;
+}
+
+/* .col-md{
+    background-color: cadetblue;
+} */
+
+.card{
+    width: 18rem;
 }

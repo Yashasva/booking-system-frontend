@@ -16,6 +16,9 @@ const Home = ()=>{
                 "seats": event.target[0].value
             }).then(res=>{
                 console.log(res)
+                if(res.data === false){
+                    alert('No seats available');
+                }
                 totalSeats();
             })
 

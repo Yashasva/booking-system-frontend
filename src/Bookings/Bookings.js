@@ -13,18 +13,26 @@ const Bookings = (props)=>{
     
 
     return(
-        <div className="container">
+        <div className="home">
             <div>
                 {props.userBookings.map((booking,key)=>{
-                        return <div key={key}>{booking.seats.map((seat, key)=>{
-                            return <p key={key}>{seat.seatid + ','}</p>
-                        })}</div>
+                        return <div className="card" key={key}>
+                            <div className="card-body">
+                                <h5 className="card-title">{'Booking' + key}</h5>
+                                <div>{booking.seats.map((seat, key)=>{
+                                    return <span key={key}>{seat.seatid + ' '}</span>
+                                })}</div>
+                            </div>
+                        </div>       
                 })}
             </div>
-            <div>
-                {props.seatStatus.map((seat,key)=>{
-                    return <div key={key}>{seat.status +''}</div>
-                })}
+            <div className="container">
+                <div className="row row-cols-6 m-2">
+                    {
+                    props.seatStatus.map((seat,key)=>{
+                        return <div key={key} className="col m-3 btn-primary">{(seat.status)?seat.seatid+': booked': seat.seatid+': available'}</div>
+                    })}
+                </div>
             </div>
             
         </div>
