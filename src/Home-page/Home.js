@@ -12,7 +12,7 @@ const Home = ()=>{
 
         event.preventDefault();
 
-        axios.post('http://localhost:3001/bookSeats', {
+        axios.post('https://nameless-falls-39888.herokuapp.com/bookSeats', {
                 "seats": event.target[0].value
             }).then(res=>{
                 console.log(res)
@@ -27,7 +27,7 @@ const Home = ()=>{
 
 
     const totalSeats =  ()=>{
-        axios.get('http://localhost:3001/getCoach/1').then((res)=>{
+        axios.get('https://nameless-falls-39888.herokuapp.com/getCoach/1').then((res)=>{
             setSeatStatus(res.data.coach[0].seats);
             setUserBookings(res.data.bookings);
         })
