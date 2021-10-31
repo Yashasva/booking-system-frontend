@@ -10,3 +10,8 @@
 .card{
     width: 18rem;
 }
+
+.col{
+    width: 11%;
+    position: relative;
+}
